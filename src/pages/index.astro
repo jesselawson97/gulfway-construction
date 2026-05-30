@@ -155,7 +155,10 @@ import Footer from '../components/Footer.astro';
             <strong>Email:</strong> <span>projects@gulfwayconstruction.com</span>
           </div>
         </div>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <form class="contact-form" name="contact" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="8e57c099-bf52-4809-b261-521a3afe7b05" />
+          <input type="hidden" name="subject" value="New Project Inquiry — Gulfway Construction" />
+          <input type="hidden" name="redirect" value="https://gulfwayconstruction.com" />
           <div class="form-row">
             <input type="text"  name="first-name" placeholder="First Name" required />
             <input type="text"  name="last-name"  placeholder="Last Name"  required />
