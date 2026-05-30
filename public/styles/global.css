@@ -10,7 +10,7 @@
   --white:   #ffffff;
   --font-sans: 'Montserrat', sans-serif;
   --font-serif: 'Playfair Display', serif;
-  --nav-h: 80px;
+  --nav-h: 110px;
 }
 
 html { scroll-behavior: smooth; }
@@ -71,7 +71,7 @@ h2.section-title.light { color: var(--white); }
 }
 .nav.scrolled { background: var(--white); box-shadow: 0 2px 20px rgba(0,0,0,.1); }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo-img { height: 72px; width: auto; filter: brightness(0) invert(1); transition: filter .3s; }
+.nav-logo-img { height: 100px; width: auto; filter: brightness(0) invert(1); transition: filter .3s; }
 .nav.scrolled .nav-logo-img { filter: none; }
 .nav-links { margin-left: auto; display: flex; gap: 2.2rem; list-style: none; }
 .nav-links a {
