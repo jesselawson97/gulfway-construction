@@ -82,7 +82,7 @@ h2.section-title.light { color: var(--white); }
 .nav.scrolled .nav-logo-img { filter: brightness(0); }
 
 /* Desktop links */
-.nav-links { margin-left: auto; display: flex; gap: 2.2rem; list-style: none; }
+.nav-links { margin-left: auto; display: flex; gap: 2.2rem; list-style: none; align-items: center; }
 .nav-links a {
   font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
   color: var(--white); transition: color .25s;
@@ -92,8 +92,11 @@ h2.section-title.light { color: var(--white); }
 .nav-cta { margin-left: 2rem; font-size: .72rem !important; border: 1px solid var(--gold) !important; padding: .5rem 1.2rem; color: var(--gold) !important; }
 .nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
 
+/* Mobile-only contact button */
+.nav-mobile-cta { display: none; }
+
 /* Hamburger */
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .4rem; margin-left: auto; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .4rem; }
 .nav-toggle span { display: block; width: 26px; height: 2px; background: var(--white); margin: 5px 0; transition: .3s; }
 .nav.scrolled .nav-toggle span,
 .nav-toggle.active span { background: var(--dark); }
@@ -129,6 +132,15 @@ h2.section-title.light { color: var(--white); }
   .nav { height: 70px; background: var(--white); box-shadow: 0 2px 20px rgba(0,0,0,.1); }
   .nav-logo-img { height: 48px; filter: brightness(0) !important; }
   .nav-toggle span { background: var(--dark); }
+
+  /* Mobile contact button in nav */
+  .nav-mobile-cta {
+    display: inline-block;
+    font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: .45rem 1rem; margin-left: auto; margin-right: .8rem;
+    white-space: nowrap;
+  }
 
   /* Mobile menu */
   .mobile-menu { display: none; top: 70px; }
