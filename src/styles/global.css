@@ -108,10 +108,8 @@ h2.section-title.light { color: var(--white); }
   gap: 1.4rem;
   z-index: 199;
   box-shadow: 0 4px 20px rgba(0,0,0,.15);
-  transform: translateY(-110%);
-  transition: transform .35s;
 }
-.mobile-menu.open { transform: translateY(0); }
+.mobile-menu.open { display: flex; }
 .mobile-menu a {
   font-size: .85rem; font-weight: 600; letter-spacing: .1em;
   text-transform: uppercase; color: var(--dark);
@@ -126,12 +124,15 @@ h2.section-title.light { color: var(--white); }
 @media (max-width: 860px) {
   .nav-toggle { display: block; }
   .nav-links { display: none; }
-  .mobile-menu { display: flex; }
 
-  /* Explicit mobile nav sizing — no variable dependency */
-  .nav { height: 70px; }
-  .nav-logo-img { height: 48px; }
-  .mobile-menu { top: 70px; }
+  /* Always show white nav on mobile — no transparent state */
+  .nav { height: 70px; background: var(--white); box-shadow: 0 2px 20px rgba(0,0,0,.1); }
+  .nav-logo-img { height: 48px; filter: brightness(0) !important; }
+  .nav-toggle span { background: var(--dark); }
+
+  /* Mobile menu */
+  .mobile-menu { display: none; top: 70px; }
+  .mobile-menu.open { display: flex; }
 
   /* Hero padding explicitly clears 70px nav + breathing room */
   .hero-content { padding-top: 100px !important; }
