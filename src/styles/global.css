@@ -311,15 +311,9 @@ h2.section-title.light { color: var(--white); }
 
 /* ── Mobile overrides ── */
 @media (max-width: 860px) {
-  /* Shrink nav on mobile */
-  .nav { height: var(--nav-h-mobile); }
-  .nav-logo-img { height: 52px; }
+  :root { --nav-h: 70px; }
 
-  /* Hero: use mobile nav height for top padding */
-  .hero-content {
-    padding-top: calc(var(--nav-h-mobile) + 2rem);
-    padding-bottom: 3rem;
-  }
+  .nav-logo-img { height: 52px; }
 
   /* Process steps single column on small screens */
   .process-steps { grid-template-columns: 1fr 1fr; }
