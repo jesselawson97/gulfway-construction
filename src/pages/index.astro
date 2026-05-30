@@ -1,17 +1,229 @@
 ---
-
+import Base   from '../layouts/Base.astro';
+import Nav    from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
+<Base
+  title="Gulfway Construction | Gulf Coast Residential & Commercial Builder"
+  description="Gulfway Construction delivers exceptional residential and commercial construction along the Gulf Coast. Custom homes, renovations, and commercial projects."
+>
+  <Nav />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="/images/hero.jpg" alt="Gulfway Construction project" loading="eager" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Gulf Coast Builder Since 2005</p>
+      <h1>Built with <em>intention.</em><br />Designed for life.</h1>
+      <p class="hero-sub">
+        From custom waterfront homes to commercial developments, Gulfway Construction
+        brings craftsmanship and vision to every project along the Gulf Coast.
+      </p>
+      <a href="#contact" class="btn btn-white">Talk to Us About Your Project</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-strip" id="services">
+    <div class="container">
+      <span class="section-label">What We Build</span>
+      <h2 class="section-title">Comprehensive Construction Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Custom Homes</h3>
+          <p>Fully custom residential builds designed around your lifestyle, lot, and vision — from first sketch to final walkthrough.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔨</div>
+          <h3>Renovations &amp; Additions</h3>
+          <p>Transform your existing space with expert renovations that preserve character while delivering modern performance.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Construction</h3>
+          <p>Ground-up commercial builds and tenant improvements managed with precision scheduling and transparent budgeting.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h3>Design-Build</h3>
+          <p>One team, one contract, zero gaps. Our integrated design-build approach accelerates timelines and reduces risk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img">
+          <img src="/images/about.jpg" alt="Gulfway Construction team on site" />
+          <div class="about-img-accent"></div>
+        </div>
+        <div class="about-text">
+          <span class="section-label">About Gulfway</span>
+          <h2 class="section-title">Two Decades of Gulf Coast Excellence</h2>
+          <p>
+            Founded in 2005, Gulfway Construction has grown from a small residential contractor
+            into one of the Gulf Coast's most trusted building firms. We combine old-school
+            craftsmanship with modern project management tools to deliver on time, on budget,
+            and beyond expectation.
+          </p>
+          <p>
+            Every project is led by an experienced superintendent and backed by a network of
+            vetted subcontractors who share our commitment to quality. We're proud to be
+            locally owned and deeply rooted in the communities we build.
+          </p>
+          <div class="about-stats">
+            <div>
+              <span class="stat-num">200+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div>
+              <span class="stat-num">20</span>
+              <span class="stat-label">Years in Business</span>
+            </div>
+            <div>
+              <span class="stat-num">98%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
+          <br />
+          <a href="#contact" class="btn btn-gold">Start Your Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <div>
+          <span class="section-label" style="color:var(--gold-lt)">Our Work</span>
+          <h2 class="section-title light">Recent Projects</h2>
+        </div>
+        <a href="#contact" class="btn btn-white" style="margin-bottom:.3rem">View All Projects</a>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item featured">
+          <img src="/images/portfolio-1.jpg" alt="Waterfront custom home" />
+          <div class="portfolio-caption"><span>Waterfront Custom Home — Panama City Beach</span></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="/images/portfolio-2.jpg" alt="Commercial office renovation" />
+          <div class="portfolio-caption"><span>Office Renovation — Pensacola</span></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="/images/portfolio-3.jpg" alt="Kitchen and bath remodel" />
+          <div class="portfolio-caption"><span>Kitchen &amp; Bath Remodel</span></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="/images/portfolio-4.jpg" alt="New construction home" />
+          <div class="portfolio-caption"><span>New Construction — Destin</span></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="/images/portfolio-5.jpg" alt="Restaurant build-out" />
+          <div class="portfolio-caption"><span>Restaurant Build-Out — Fort Walton Beach</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process" id="process">
+    <div class="container">
+      <span class="section-label">How We Work</span>
+      <h2 class="section-title">Our Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Discovery Call</h3>
+          <p>We listen first. A free consultation to understand your vision, timeline, and budget before we ever pick up a pencil.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Design &amp; Planning</h3>
+          <p>Our team develops detailed plans, specifications, and a transparent fixed-price or cost-plus proposal.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Permitting &amp; Preconstruction</h3>
+          <p>We handle permits, subcontractor coordination, and material procurement so groundbreaking happens on schedule.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Construction</h3>
+          <p>Daily updates, a dedicated superintendent on site, and milestone walkthroughs keep you informed every step of the way.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <h3>Delivery &amp; Warranty</h3>
+          <p>A thorough punch-list walkthrough, full documentation package, and a 1-year builder's warranty on every project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Build Something Great?</h2>
+      <p>Let's talk about your project. Free consultations — no pressure, no obligation.</p>
+      <a href="#contact" class="btn btn-white">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <span class="section-label">Let's Talk</span>
+          <h2>Start Your Project Today</h2>
+          <p>
+            Whether you're ready to break ground or just starting to explore your options,
+            we'd love to hear from you. Fill out the form and a member of our team will
+            reach out within one business day.
+          </p>
+          <div class="contact-detail">
+            <strong>Phone:</strong> <span>(800) 555-0100</span>
+          </div>
+          <div class="contact-detail">
+            <strong>Email:</strong> <span>info@gulfwayconstruction.com</span>
+          </div>
+          <div class="contact-detail">
+            <strong>Office:</strong> <span>123 Harbor Blvd, Pensacola, FL 32501</span>
+          </div>
+          <div class="contact-detail">
+            <strong>Hours:</strong> <span>Mon – Fri, 7 AM – 5 PM CT</span>
+          </div>
+        </div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <div class="form-row">
+            <input type="text"  name="first-name" placeholder="First Name" required />
+            <input type="text"  name="last-name"  placeholder="Last Name"  required />
+          </div>
+          <input type="email" name="email" placeholder="Email Address" required />
+          <input type="tel"   name="phone" placeholder="Phone Number" />
+          <select name="project-type">
+            <option value="" disabled selected>Project Type</option>
+            <option>Custom Home</option>
+            <option>Renovation / Addition</option>
+            <option>Commercial Construction</option>
+            <option>Design-Build</option>
+            <option>Other</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your project…"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
