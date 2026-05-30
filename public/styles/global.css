@@ -134,8 +134,9 @@ h2.section-title.light { color: var(--white); }
   .mobile-menu { display: none; top: 70px; }
   .mobile-menu.open { display: flex; }
 
-  /* Hero padding explicitly clears 70px nav + breathing room */
-  .hero-content { padding-top: 100px !important; }
+  /* Hero: tighter height on mobile, pad top to clear nav */
+  .hero { min-height: auto; }
+  .hero-content { padding-top: 90px !important; padding-bottom: 3.5rem !important; }
 }
 
 /* ── Hero ── */
