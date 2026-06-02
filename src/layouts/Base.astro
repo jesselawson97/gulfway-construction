@@ -2,11 +2,38 @@
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
 }
 const {
-  title = 'Gulfway Construction',
-  description = 'Gulfway Construction — quality residential and commercial construction along the Gulf Coast.',
+  title = 'Commercial Contractor Bradenton FL | Gulfway Construction',
+  description = 'Gulfway Construction is a licensed commercial contractor in Bradenton, FL serving Manatee & Sarasota County. Renovations, tenant buildouts, interior alterations. Call 941-730-8491.',
+  canonical = 'https://gulfwayconstruction.com',
 } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Gulfway Construction",
+  "url": "https://gulfwayconstruction.com",
+  "telephone": "+1-941-730-8491",
+  "email": "projects@gulfwayconstruction.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bradenton",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Bradenton, FL",
+    "Sarasota, FL",
+    "Manatee County, FL",
+    "Sarasota County, FL",
+    "Tampa Bay, FL"
+  ],
+  "description": "Licensed commercial contractor in Bradenton, FL specializing in commercial renovations, tenant buildouts, interior alterations, and construction management.",
+  "priceRange": "$$$$",
+  "sameAs": []
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +42,21 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Gulfway Construction" />
+    <meta property="og:image" content="https://gulfwayconstruction.com/images/hero.jpg" />
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
