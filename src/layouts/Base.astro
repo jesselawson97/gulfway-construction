@@ -2,10 +2,12 @@
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
 }
 const {
-  title = 'Gulfway Construction | Gulf Coast Commercial Contractor',
-  description = 'Gulfway Construction is a Gulf Coast commercial contractor specializing in commercial renovations, tenant buildouts, and interior alterations. Serving Pensacola, Destin, Panama City Beach, and surrounding areas.',
+  title = 'Commercial Contractor Bradenton FL | Gulfway Construction',
+  description = 'Gulfway Construction is a licensed commercial contractor in Bradenton, FL serving Manatee & Sarasota County. Renovations, tenant buildouts, interior alterations. Call 941-730-8491.',
+  canonical = 'https://gulfwayconstruction.com',
 } = Astro.props;
 
 const schema = {
@@ -15,22 +17,23 @@ const schema = {
   "url": "https://gulfwayconstruction.com",
   "logo": "https://gulfwayconstruction.com/images/logo.png",
   "image": "https://gulfwayconstruction.com/images/hero.jpg",
-  "description": "Gulf Coast commercial contractor specializing in commercial renovations, tenant buildouts, and interior alterations.",
   "telephone": "+19417308491",
   "email": "projects@gulfwayconstruction.com",
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Bradenton",
     "addressRegion": "FL",
     "addressCountry": "US"
   },
   "areaServed": [
-    { "@type": "City", "name": "Pensacola" },
-    { "@type": "City", "name": "Destin" },
-    { "@type": "City", "name": "Fort Walton Beach" },
-    { "@type": "City", "name": "Panama City Beach" },
-    { "@type": "City", "name": "Navarre" },
-    { "@type": "City", "name": "Gulf Breeze" }
+    { "@type": "City", "name": "Bradenton" },
+    { "@type": "City", "name": "Sarasota" },
+    { "@type": "AdministrativeArea", "name": "Manatee County" },
+    { "@type": "AdministrativeArea", "name": "Sarasota County" },
+    { "@type": "City", "name": "Tampa Bay" }
   ],
+  "description": "Licensed commercial contractor in Bradenton, FL specializing in commercial renovations, tenant buildouts, interior alterations, and construction management.",
+  "priceRange": "$$$$",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Commercial Construction Services",
@@ -49,39 +52,35 @@ const schema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="commercial contractor Gulf Coast, commercial renovation Florida, tenant buildout Pensacola, interior alterations Destin, commercial construction Panama City Beach" />
+    <meta name="keywords" content="commercial contractor Bradenton FL, commercial renovation Manatee County, tenant buildout Sarasota, interior alterations Bradenton, commercial construction Florida" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://gulfwayconstruction.com" />
+    <meta name="geo.region" content="US-FL" />
+    <meta name="geo.placename" content="Bradenton, Florida" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://gulfwayconstruction.com" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://gulfwayconstruction.com/images/hero.jpg" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Gulfway Construction" />
+    <meta property="og:image" content="https://gulfwayconstruction.com/images/hero.jpg" />
     <meta property="og:locale" content="en_US" />
 
-    <!-- Geo tags for local SEO -->
-    <meta name="geo.region" content="US-FL" />
-    <meta name="geo.placename" content="Gulf Coast, Florida" />
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="/styles/global.css" />
-
-    <!-- Local Business Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
     <slot />
