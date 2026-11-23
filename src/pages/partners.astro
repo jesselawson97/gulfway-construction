@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const groups = [
+  { region: "Manatee & Sarasota County", sites: [
+    { name: "Manatee Concrete", url: "https://manateeconcrete.com", desc: "Commercial and residential concrete and paver contractor referrals." },
+    { name: "Pool Resurfacing Bradenton", url: "https://poolresurfacingbradenton.com", desc: "Pool resurfacing referrals for Bradenton and Manatee County." },
+    { name: "Pool Resurfacing Sarasota", url: "https://poolresurfacingsarasotafl.com", desc: "Pool resurfacing for Sarasota County homes, condos and HOAs." },
+    { name: "Pool Cage Bradenton", url: "https://poolcagebradenton.com", desc: "New pool cages, rescreening and repairs in Manatee County." },
+    { name: "Pool Resurfacing North Port", url: "https://poolresurfacingnorthport.com", desc: "Pool resurfacing in North Port and Wellen Park." },
+  ]},
+  { region: "Charlotte County", sites: [
+    { name: "Pool Resurfacing Port Charlotte", url: "https://poolresurfacingportcharlotte.com", desc: "Pool resurfacing and storm repairs in Charlotte County." },
+  ]},
+  { region: "Tampa Bay", sites: [
+    { name: "Pool Resurfacing Clearwater", url: "https://poolresurfacingclearwater.com", desc: "Pool resurfacing across Pinellas County." },
+    { name: "Pool Resurfacing Brandon", url: "https://poolresurfacingbrandon.com", desc: "Pool resurfacing in Brandon, Valrico and Riverview." },
+  ]},
+  { region: "Treasure Coast", sites: [
+    { name: "Pool Resurfacing Port St. Lucie", url: "https://poolresurfacingportstlucie.com", desc: "Pool resurfacing in Port St. Lucie and St. Lucie County." },
+    { name: "Seawall Repair Stuart", url: "https://seawallrepairstuart.com", desc: "Seawall repair referrals for Stuart and Martin County." },
+  ]},
+];
+---
+<Base title="Local Partners | Gulfway Construction" description="Local home-service referral partners across Florida's Gulf Coast and Treasure Coast." canonical="https://gulfwayconstruction.com/partners">
+  <Nav />
+  <section style="padding:9rem 0 5rem">
+    <div class="container" style="max-width:860px">
+      <span class="section-label">Local Partners</span>
+      <h1 class="section-title">Local partners</h1>
+      <p style="margin-bottom:2rem">Gulfway Construction focuses on commercial construction. For other projects, these independent referral services connect property owners with licensed local contractors. Each operates separately from Gulfway Construction.</p>
+      {groups.map(g => (
+        <div style="margin-bottom:2rem">
+          <h2 style="font-size:1.25rem;margin-bottom:.75rem">{g.region}</h2>
+          <ul style="list-style:none;padding:0;margin:0">
+            {g.sites.map(s => (
+              <li style="padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.08)"><a href={s.url} style="font-weight:700">{s.name}</a> — {s.desc}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+  <Footer />
+</Base>
