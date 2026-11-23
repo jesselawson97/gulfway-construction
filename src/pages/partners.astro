@@ -26,11 +26,15 @@ const groups = [
 ---
 <Base title="Local Partners | Gulfway Construction" description="Local home-service referral partners across Florida's Gulf Coast and Treasure Coast." canonical="https://gulfwayconstruction.com/partners">
   <Nav />
-  <section style="padding:9rem 0 5rem">
+  <section style="background:var(--dark);color:#fff;padding:9rem 0 3.5rem">
     <div class="container" style="max-width:860px">
       <span class="section-label">Local Partners</span>
-      <h1 class="section-title">Local partners</h1>
-      <p style="margin-bottom:2rem">Gulfway Construction focuses on commercial construction. For other projects, these independent referral services connect property owners with licensed local contractors. Each operates separately from Gulfway Construction.</p>
+      <h1 class="section-title" style="color:#fff">Local partners</h1>
+      <p style="margin:0;opacity:.85">Gulfway Construction focuses on commercial construction. For other projects, these independent referral services connect property owners with licensed local contractors. Each operates separately from Gulfway Construction.</p>
+    </div>
+  </section>
+  <section style="padding:3rem 0 5rem">
+    <div class="container" style="max-width:860px">
       {groups.map(g => (
         <div style="margin-bottom:2rem">
           <h2 style="font-size:1.25rem;margin-bottom:.75rem">{g.region}</h2>
